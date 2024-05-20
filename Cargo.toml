@@ -1,0 +1,13 @@
+[package]
+name = "hack"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pixels = "0.13.0"
+sysinfo = "0.30.12"
+winit = "0.30.0"
+
+[dependencies.winapi]
+version = "0.3.9"
+features = ["ntdef", "processthreadsapi", "handleapi", "memoryapi"]
