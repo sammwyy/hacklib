@@ -1,15 +1,14 @@
-use hack::{client::Client, utils::find_pid_by_name};
+use hack::client::Client;
 
-const PROCESS_NAME: &str = "Banana.exe";
-const ADDRESS: usize = 0x87115C888;
+const PID: u32 = 12892;
+const ADDRESS: usize = 0x1a719aa2910;
 
 fn main() {
-    let pid = find_pid_by_name(PROCESS_NAME).unwrap_or(0);
-    let mut client = Client::new(pid);
+    let mut client = Client::new(PID);
     if !client.init() {
-        println!("{} pid found but isn't running.", PROCESS_NAME);
+        println!("{} process isn't running.", PID);
     }
 
-    let result: i32 = client.read_mem(ADDRESS);
-    println!("Read memory value ({}) PID {}", result, pid);
+    let result: String = client.read_str(ADDRESS, 10);
+    println!("Read memory value ({}) PID {}", result, PID);
 }

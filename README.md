@@ -8,7 +8,7 @@ Game/Process hacking library built in rust.
 - [X] Memory:
   - [X] Read
   - [X] Write
-  - [ ] Offsets.
+  - [x] Offsets & Module enumeration.
   - [ ] Paging & Lookup.
 - [ ] Render:
   - [ ] GL/DX Context hooking.

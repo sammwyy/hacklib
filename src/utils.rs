@@ -1,3 +1,5 @@
+use windows::core::PCSTR;
+
 pub fn find_pid_by_name(name: &str) -> Option<u32> {
     let mut system = sysinfo::System::new();
     system.refresh_all();
@@ -9,4 +11,8 @@ pub fn find_pid_by_name(name: &str) -> Option<u32> {
     }
 
     None
+}
+
+pub fn pcstr_string(value: &str) -> PCSTR {
+    PCSTR::from_raw(value.as_ptr())
 }

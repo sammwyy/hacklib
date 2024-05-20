@@ -8,6 +8,12 @@ pixels = "0.13.0"
 sysinfo = "0.30.12"
 winit = "0.30.0"
 
-[dependencies.winapi]
-version = "0.3.9"
-features = ["ntdef", "processthreadsapi", "handleapi", "memoryapi"]
+[dependencies.windows]
+version = "0.56.0"
+features = [
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_System_LibraryLoader",
+]
